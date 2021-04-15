@@ -1,0 +1,515 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>Python笔记 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.9-a","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>MrLee Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/bg/article_and_about_bg.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Python笔记">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-04-15 16:42" pubdate>
+        2021年4月15日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.1k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      13
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Python笔记</h1>
+            
+            <div class="markdown-body">
+              <h2 id="PYTHON"><a href="#PYTHON" class="headerlink" title="PYTHON"></a>PYTHON</h2><h3 id="1-Python中，使用-列表生成式-找出两个列表中不同的元素："><a href="#1-Python中，使用-列表生成式-找出两个列表中不同的元素：" class="headerlink" title="1.Python中，使用 列表生成式 找出两个列表中不同的元素："></a>1.Python中，使用 <strong>列表生成式</strong> 找出两个列表中不同的元素：</h3><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs perl">a = [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>]  <br>b = [<span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>]  <br><span class="hljs-keyword">print</span>([i <span class="hljs-keyword">for</span> i in a <span class="hljs-keyword">if</span> i <span class="hljs-keyword">not</span> in b] + [i <span class="hljs-keyword">for</span> i in b <span class="hljs-keyword">if</span> i <span class="hljs-keyword">not</span> in a])  <br>[<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">8</span>, <span class="hljs-number">7</span>, <span class="hljs-number">2</span>]  <br><br>变量倒序：  <br><span class="hljs-keyword">print</span>(a[::-<span class="hljs-number">1</span>])        <span class="hljs-comment"># 输出：[8, 5, 4, 3, 1]  此法不会改变变量本身（a还是之前的a）</span><br><span class="hljs-keyword">print</span>(a.<span class="hljs-keyword">reverse</span>())    <span class="hljs-comment"># 输出：[8, 5, 4, 3, 1]  此法改变了变量本身（a已不再是之前的a）</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="2-用Python搭建一个临时的HTTP站点-可通过该站点共享目录文件等等"><a href="#2-用Python搭建一个临时的HTTP站点-可通过该站点共享目录文件等等" class="headerlink" title="2.用Python搭建一个临时的HTTP站点(可通过该站点共享目录文件等等)"></a>2.用Python搭建一个临时的HTTP站点(可通过该站点<strong>共享目录文件</strong>等等)</h3><figure class="highlight mel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs mel"><span class="hljs-number">1</span>）进入待分享的目录 <br><span class="hljs-number">2</span>）执行命令<span class="hljs-keyword">python</span> -m SimpleHTTPServer 端口号 <br>　 注意：不填端口号则默认使用<span class="hljs-number">8000</span>端口。 <br><span class="hljs-number">3</span>）浏览器访问该主机的地址：http:<span class="hljs-comment">//IP:端口号/</span><br><span class="hljs-keyword">python</span> <span class="hljs-number">2</span>版本  <br><span class="hljs-keyword">python</span> -m SimpleHTTPServer <span class="hljs-number">8080</span>  <br><span class="hljs-keyword">python</span> <span class="hljs-number">3</span>版本  <br><span class="hljs-keyword">python</span> -m http.server <span class="hljs-number">8080</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-virtualenv：创建python虚拟环境时，用”virtualenv-–no-site-packages-venv”命令，提示：virtualenv-error-unrecognized-arguments-–no-site-packages！！！（python3-8-1-64-bit、virtualenv20-0-4）"><a href="#3-virtualenv：创建python虚拟环境时，用”virtualenv-–no-site-packages-venv”命令，提示：virtualenv-error-unrecognized-arguments-–no-site-packages！！！（python3-8-1-64-bit、virtualenv20-0-4）" class="headerlink" title="3.virtualenv：创建python虚拟环境时，用”virtualenv –no-site-packages venv”命令，提示：virtualenv: error: unrecognized arguments: –no-site-packages！！！（python3.8.1 64-bit、virtualenv20.0.4）"></a>3.virtualenv：创建python虚拟环境时，用”virtualenv –no-site-packages venv”命令，提示：virtualenv: error: unrecognized arguments: –no-site-packages！！！（python3.8.1 64-bit、virtualenv20.0.4）</h3><p><strong>解决办法</strong>：降低 virtualenv 版本（我降到了16.7.7）<br>报错截图：<br><img src="/img/content_images/20200221102823194_1685.png" srcset="/img/loading.gif" lazyload alt="错误截图">  </p>
+<h3 id="4-VS-Code安装完成后，打开出现黑屏，或者运行python文件时出现不能运行，亦或者vscode用不了cmd（总是运行超时）"><a href="#4-VS-Code安装完成后，打开出现黑屏，或者运行python文件时出现不能运行，亦或者vscode用不了cmd（总是运行超时）" class="headerlink" title="4.VS Code安装完成后，打开出现黑屏，或者运行python文件时出现不能运行，亦或者vscode用不了cmd（总是运行超时）"></a>4.VS Code安装完成后，打开出现黑屏，或者运行python文件时出现不能运行，亦或者vscode用不了cmd（总是运行超时）</h3><p><strong>解决办法</strong>：修改软件兼容性并改为以管理员身份运行，如下：<br><img src="/img/content_images/20200221103956354_16976.png" srcset="/img/loading.gif" lazyload>  </p>
+<h3 id="5-运行ipython出现以下问题（ipython-7-13-0，prompt-toolkit-3-0-3）："><a href="#5-运行ipython出现以下问题（ipython-7-13-0，prompt-toolkit-3-0-3）：" class="headerlink" title="5.运行ipython出现以下问题（ipython 7.13.0，prompt-toolkit 3.0.3）："></a>5.运行ipython出现以下问题（ipython 7.13.0，prompt-toolkit 3.0.3）：</h3><p>  <img src="/img/content_images/20200229101501663_15501.png" srcset="/img/loading.gif" lazyload><br>  <strong>原因及解决办法</strong>：ipython 7 . 10 . 2（或ipython 7.13.0）和prompt toolkit v3.x之间存在一些不兼容之处。但是，当降级到prompt toolkit v2.x时，一切正常。github的ipython员工建议我这样做(这是他们的功劳)。  </p>
+<h3 id="6-批量安装Python的第三方库："><a href="#6-批量安装Python的第三方库：" class="headerlink" title="6.批量安装Python的第三方库："></a>6.批量安装Python的第三方库：</h3><p>  <img src="/img/content_images/20200413141854674_2436.png" srcset="/img/loading.gif" lazyload>  </p>
+<pre><code>1.将要安装的第三方库按照以上格式写入.txt文件中
+2.命令行输入：pip install -r requirements.txt  
+</code></pre>
+<h3 id="7-使用pip-install-r-requirements-txt时有时候会提示代理问题"><a href="#7-使用pip-install-r-requirements-txt时有时候会提示代理问题" class="headerlink" title="7.使用pip install -r requirements.txt时有时候会提示代理问题"></a>7.使用<code>pip install -r requirements.txt</code>时有时候会提示代理问题</h3><p><img src="/img/content_images/20210415101046404_11949.png" srcset="/img/loading.gif" lazyload></p>
+<p>原因是升级了<code>pip</code>；当然，这是少数情况。<strong>解决办法是退回pip低版本下安装（pip==19.2.3）</strong>：  </p>
+<p><img src="/img/content_images/20210415101147175_29259.png" srcset="/img/loading.gif" lazyload></p>
+<h3 id="8-使用pyinstaller打包方法"><a href="#8-使用pyinstaller打包方法" class="headerlink" title="8.使用pyinstaller打包方法"></a>8.使用pyinstaller打包方法</h3><p>第一种：把由.py文件打包而成的.exe文件及相关文件放在一个目录中。</p>
+<blockquote>
+<p>语法：pyinstaller 应用程序<br>eg：pyinstaller Hello.py  </p>
+</blockquote>
+<p>第二种：加上 -F 参数后把制作出的.exe打包成一个独立的.exe格式的可执行文件。</p>
+<blockquote>
+<p>语法：pyinstaller -F 应用程序<br>eg：pyinstaller -F Hello.py </p>
+</blockquote>
+<p>如果你的脚本文件中包含其他脚本，比如hello.py包含自定义脚本(world.py)或是系统脚本(sys.py)：则需要在打包的时候加上其他脚本的路径。<br><code>通过-p指定第三方包的路径，一条路径对应一个-p</code>  </p>
+<blockquote>
+<p>eg：pyinstaller -F -p C:\SystemLib\site-packages -p C:\MyLib Hello.py</p>
+</blockquote>
+<p>执行一次打包命令通常会生成两个目录一个附件，分别是build、dist、和xx.spec。<br>build：是编译过程中的中间产物，<br>dist：是最终可执行程序目录，<br>spec：spec文件是类似缓存，如果你第二次打包，则需要先把spec删掉，否则第二次打包会受影响。    </p>
+<p><strong>pyinstaller参数介绍</strong>    </p>
+<p>常用的主要是-F、-p、-i、-w这几个参数。</p>
+<p>-a：不包含编码.在支持Unicode的python版本上默认包含所有的编码<br>-c：使用控制台子系统执行(默认)(只对Windows有效)<br>-d：产生debug版本的可执行文件<br>-i ：指定打包程序使用的图标（icon）文件<br>-F：打包成可执行程序<br>-h：查看帮助<br>-p：添加使用的第三方库路径<br>-v：查看 PyInstaller 版本<br>-w：取消控制台显示（默认是显示控制台的）  </p>
+<p><strong>举个栗子：</strong>  </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs stylus">pyinstaller -F -<span class="hljs-selector-tag">p</span> C:\SystemLib\site-packages -<span class="hljs-selector-tag">p</span> C:\MyLib <span class="hljs-selector-tag">main</span><span class="hljs-selector-class">.py</span> -<span class="hljs-selector-tag">i</span> C:\image\excel.ico<br>解释：<br>打包 <span class="hljs-selector-tag">main</span><span class="hljs-selector-class">.py</span> 脚本<br><span class="hljs-selector-tag">main</span>.py包含第三方脚本，一个是系统脚本，一个是自定义脚本<br>设置可执行程序的图标为excel.ico<br></code></pre></td></tr></table></figure>
+
+<h3 id="9-django项目中出现：in-a-frame-because-it-set-‘X-Frame-Options’-to-‘deny’"><a href="#9-django项目中出现：in-a-frame-because-it-set-‘X-Frame-Options’-to-‘deny’" class="headerlink" title="9. django项目中出现：in a frame because it set ‘X-Frame-Options’ to ‘deny’."></a>9. django项目中出现：in a frame because it set ‘X-Frame-Options’ to ‘deny’.</h3><p>解决办法参考： <a target="_blank" rel="noopener" href="https://www.whbwiki.com/318.html">Django</a></p>
+<h3 id="10-pip仓库源"><a href="#10-pip仓库源" class="headerlink" title="10. pip仓库源"></a>10. pip仓库源</h3><p>方法一（首选）：在<code>C:\Users\Administrator\pip</code>中新建文件<code>pip.ini</code>，配置以下内容</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">[<span class="hljs-keyword">global</span>]<br><span class="hljs-keyword">index</span>-url = https://pypi.tuna.tsinghua.edu.cn/simple<br>[install]<br><span class="hljs-keyword">trusted</span>-host=mirrors.aliyun.com<br></code></pre></td></tr></table></figure>
+<p>方法二：<code>pip install pypinyin -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com</code></p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/Python%E9%87%8C%E9%9D%A2%E7%9A%84%E5%9D%91/">Python里面的坑</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Python%E6%96%87%E4%BB%B6%E6%89%93%E5%8C%85/">Python文件打包</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98/">虚拟环境问题</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/04/15/windows%E7%AC%94%E8%AE%B0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Windows笔记</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/04/15/JS%E7%AC%94%E8%AE%B0/">
+                        <span class="hidden-mobile">JS笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
